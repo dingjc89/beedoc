@@ -31,7 +31,7 @@ func (this *TestController) Myext() {
 }
 
 func (this *TestController) GetUrl() {
-	this.Ctx.Output.Body([]byte(this.UrlFor(".Myext")))
+	this.Ctx.Output.Body([]byte(this.URLFor(".Myext")))
 }
 ```
 
@@ -46,16 +46,16 @@ beego.AutoRouter(&TestController{})
 那么通过方式可以获取相应的URL地址：
 
 ```
-UrlFor("TestController.List")
+URLFor("TestController.List")
 // 输出 /api/list
 
-UrlFor("TestController.Get", ":last", "xie", ":first", "asta")
+URLFor("TestController.Get", ":last", "xie", ":first", "asta")
 // 输出 /person/xie/asta
 
-UrlFor("TestController.Myext")
+URLFor("TestController.Myext")
 // 输出 /Test/Myext
 
-UrlFor("TestController.GetUrl")
+URLFor("TestController.GetUrl")
 // 输出 /Test/GetUrl
 ```
 
